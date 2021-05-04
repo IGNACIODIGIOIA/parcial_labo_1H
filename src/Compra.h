@@ -25,10 +25,10 @@ typedef struct{
 }Compra;
 
 int com_inicializarArray(Compra* array,int limite);
-int com_altaForzadaArray(Compra* array,int limite, int indice, int* idCompra, int idCliente,char* descripcion, char* direccion, char* color, int* cantidad);
+int com_altaForzadaArray(Compra* array,int limite, int indice, int* idCompra, int idCliente,char* descripcion, char* direccion, char* color, int cantidad);
 int com_imprimirArray(Compra* array,int limite);
 int com_imprimir(Compra* pElemento);
-int com_alta(Compra* array,int limite, int indice,int* idCliente, int* idCompra , int* precio);
+int com_alta(Compra* array,int limite, int indice,int idCliente, int* idCompra , int* precio);
 int com_getEmptyIndex(Compra* array,int limite);
 int com_baja(Compra* array,int limite, int indice);
 int com_buscarId(Compra array[], int limite, int valorBuscado);

@@ -10,6 +10,7 @@
 #include "cliente.h"
 #include "compra.h"
 #include "Cli-Com.h"
+#include "utn.h"
 
 
 int Rel_baja(Cliente* arrayCliente,int limiteCliente, int indiceCliente, Compra* arrayCompra, int limiteCompra)

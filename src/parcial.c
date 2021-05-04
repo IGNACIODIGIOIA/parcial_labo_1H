@@ -14,6 +14,7 @@
 #include "Compra.h"
 #include "utn.h"
 #include "informes.h"
+#include "Cli-Com.h"
 #define QTY_CLIENTES 100
 #define QTY_COMPRAS 1000
 
@@ -112,7 +113,7 @@ int main(void) {
 							posicion = cli_buscarId(arrayCliente,QTY_CLIENTES,auxiliarId);
 							if(posicion != -1)
 							{
-								com_alta(arrayCompra,QTY_CLIENTES,auxiliarIndiceCompra,arrayCliente[auxiliarId].id,&idCompras,precio);
+								com_alta(arrayCompra,QTY_CLIENTES,auxiliarIndiceCompra,arrayCliente[auxiliarId].id,&idCompras,&precio);
 							}
 						}else
 							{
@@ -133,7 +134,7 @@ int main(void) {
 								printf("\nERROR");
 							};
 												break;
-					case 7: if(Rel_ImprimirClientesyCompras(arrayCompra, QTY_COMPRAS, idCompras, arrayCliente, QTY_CLIENTES)!= 0)
+					case 7: if(Rel_ImprimirClientesyCompras(arrayCompra, arrayCliente, QTY_COMPRAS, idCompras, QTY_CLIENTES)!= 0)
 							{
 								printf("\nERROR");
 							}

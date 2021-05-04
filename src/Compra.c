@@ -7,6 +7,9 @@
 #include"Compra.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "utn.h"
+#include <string.h>
+
 
 int com_inicializarArray(Compra* array,int limite)
 {
@@ -24,7 +27,7 @@ int com_inicializarArray(Compra* array,int limite)
 }
 //----------------------------------------------------------------------------------------------------------------
 
-int com_altaForzadaArray(Compra* array,int limite, int indice, int* idCompra, int idCliente,char* descripcion, char* direccion, char* color, int* cantidad)
+int com_altaForzadaArray(Compra* array,int limite, int indice, int* idCompra, int idCliente,char* descripcion, char* direccion, char* color, int cantidad)
 {
 	int respuesta = -1;
 	Compra bufferCompra;
@@ -93,7 +96,7 @@ int com_getEmptyIndex(Compra* array,int limite)
 	return respuesta;
 }
 //----------------------------------------------------------------------------------------------------------------
-int com_alta(Compra* array,int limite, int indice,int* idCliente, int* idCompra , int* cantidad)
+int com_alta(Compra* array,int limite, int indice,int idCliente, int* idCompra , int* cantidad)
 {
 	int respuesta = -1;
 	Compra bufferCompra;
@@ -102,7 +105,7 @@ int com_alta(Compra* array,int limite, int indice,int* idCliente, int* idCompra 
 			if( utn_getDescripcion(bufferCompra.descripcion,QTY_DESCRIPCION,"\nDescripcion? ", "\nError",2) ==0 &&
 				utn_getDescripcion(bufferCompra.direccionDeEntrega,QTY_DIRECCIONDEENTREGA, "\nDireccion?","\nError",2 )==0 &&
 				utn_getDescripcion(bufferCompra.color,QTY_COLOR, "\nColor?","\nError",2 )==0 &&
-				utn_getNumero(&cantidad,"\nIngrese cantidad barbijos: ","\nError. Reingrese",1,10000000,2)==0)
+				utn_getNumero(cantidad,"\nIngrese cantidad barbijos: ","\nError. Reingrese",1,10000000,2)==0)
 				{
 					respuesta = 0;
 					bufferCompra.idCliente = idCliente;

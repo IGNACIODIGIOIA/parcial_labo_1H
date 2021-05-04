@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
+#include <string.h>
 
 int cli_inicializarArray(Cliente* array,int limite)
 {
@@ -51,7 +52,7 @@ int cli_imprimir(Cliente* pElemento)
 	if(pElemento != NULL && pElemento->isEmpty == 0)
 		{
 			retorno=0;
-			printf("\n %d - %s - %s - %s ",pElemento->id,pElemento->nombre,pElemento->apellido,pElemento->Cuit);
+			printf("\n %d - %s - %s - %n ",pElemento->id,pElemento->nombre,pElemento->apellido,pElemento->Cuit);
 		}
 	return retorno;
 }
@@ -134,7 +135,7 @@ int cli_modificarArray(Cliente* array,int limite, int indice)
 		{
 			if(	utn_getNombre(bufferCliente.nombre,NOMBRE_LEN,"\nNombre?\n","\nERROR\n",2) == 0 &&
 			utn_getNombre(bufferCliente.apellido,APELLIDO_LEN,"\nApellido?\n","\nERROR\n",2) == 0 &&
-			utn_getDescripcion(bufferCliente.Cuit,12,"\n Cuit? \n","\nERROR\n",2) == 0)
+			utn_getNumero(bufferCliente.Cuit,"\n Cuit? \n","\nERROR\n",10000000000, 99999999999,2)== 0)
 
 			{
 			respuesta = 0;
@@ -159,7 +160,7 @@ int cli_baja(Cliente* array,int limite, int indice)
 //----------------------------------------------------------------------------------------------------------------
 int cli_imprimirPorId(Cliente* array,int limite, int indice)
 {
-	Cliente bufferCliente;
+
 	int retorno=-1;
 	if(array != NULL && limite > 0 && indice < limite && indice >= 0 && array[indice].isEmpty == 0)
 	{
@@ -168,7 +169,7 @@ int cli_imprimirPorId(Cliente* array,int limite, int indice)
 			if(array[i].id == indice)
 			{
 				printf("\nId - Nombre - Apellido - Cuit");
-				printf("\n %d - %s - %s - %s ",array[i].id,array[i].nombre,array[i].apellido,array[i].Cuit);
+				printf("\n %d - %s - %s - %n ",array[i].id,array[i].nombre,array[i].apellido,array[i].Cuit);
 				retorno = 0;
 				break;
 			}
@@ -185,7 +186,7 @@ int cli_ImprimirConCompras(Cliente* pElemento, int compra)
 	if(pElemento != NULL && pElemento->isEmpty == 0)
 		{
 			retorno=0;
-			printf("\n %d - %s - %s - %s - %d ",pElemento->id,pElemento->nombre,pElemento->apellido,pElemento->Cuit, compra);
+			printf("\n %d - %s - %s - %n - %d ",pElemento->id,pElemento->nombre,pElemento->apellido,pElemento->Cuit, compra);
 		}
 	return retorno;
 }

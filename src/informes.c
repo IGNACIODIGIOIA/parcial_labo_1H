@@ -9,6 +9,7 @@
 #include <string.h>
 #include "compra.h"
 #include "cliente.h"
+#include "informes.h"
 //----------------------------------------------------------------------------------------------------------------
 
 int inf_ConteoPend(Compra* array, int limite)

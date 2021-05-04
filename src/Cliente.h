@@ -15,7 +15,7 @@
 typedef struct{
 	char nombre [NOMBRE_LEN];
 	char apellido [APELLIDO_LEN];
-	char Cuit[11];
+	int Cuit[11];
 	int id;
 	int isEmpty;
 }Cliente;
