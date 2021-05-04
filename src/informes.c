@@ -11,7 +11,7 @@
 #include "cliente.h"
 //----------------------------------------------------------------------------------------------------------------
 
-int inf_ContarPendientes(Compra* array, int limite)
+int inf_ConteoPend(Compra* array, int limite)
 {
 	int respuesta = -1;
 	int contador = 0;
@@ -31,7 +31,7 @@ int inf_ContarPendientes(Compra* array, int limite)
 }
 //----------------------------------------------------------------------------------------------------------------
 
-int inf_CompraConPrecioXunidadMasBajo(Compra* array, int limite)
+int inf_CompraBarataXun(Compra* array, int limite)
 {
 	int respuesta = -1;
 	int compraId = -1;

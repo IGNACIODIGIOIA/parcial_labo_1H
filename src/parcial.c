@@ -156,13 +156,13 @@ int main(void) {
 											}
 													break;
 									case 2:
-										if(inf_ContarPendientes(arrayCompra, QTY_COMPRAS) != 0)
+										if(inf_ConteoPend(arrayCompra, QTY_COMPRAS) != 0)
 											{
 												printf("\nERROR");
 											}
 													break;
 									case 3:
-										if(inf_CompraConPrecioXunidadMasBajo(arrayCompra, QTY_COMPRAS) != 0)
+										if(inf_CompraBarataXun(arrayCompra, QTY_COMPRAS) != 0)
 											{
 												printf("\nERROR");
 											}

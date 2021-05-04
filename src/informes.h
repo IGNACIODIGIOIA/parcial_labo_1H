@@ -8,8 +8,8 @@
 #ifndef INFORMES_H_
 #define INFORMES_H_
 
-int inf_ContarPendientes(Compra* array, int limite);
-int inf_CompraConPrecioXunidadMasBajo(Compra* array, int limite);
+int inf_ConteoPend(Compra* array, int limite);
+int inf_CompraBarataXun(Compra* array, int limite);
 int inf_ColorMasPedido(Compra* array, int limite);
 int inf_ContarPorColor(Compra* array, int limite, char* color, int* cantidad);
 
